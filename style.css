@@ -1,130 +1,173 @@
-<!DOCTYPE html>
-<html lang="my">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ပြည်ပ စိုက်ပျိုးရေး/မွေးမြူရေး ဝန်ထမ်းလျှောက်လွှာ</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Pyidaungsu:wght@400;700&display=swap');
 
-    <div class="form-container">
-        <div class="form-header">
-            <h2>ပြည်ပ စိုက်ပျိုးရေး/မွေးမြူရေး ဝန်ထမ်းလျှောက်လွှာ</h2>
-            <p>အောက်ပါ အချက်အလက်များကို မှန်ကန်စွာ ဖြည့်သွင်းပေးပါရန်</p>
-        </div>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        <form action="#" method="POST" enctype="multipart/form-data">
-            
-            <!-- ၁။ ကိုယ်ရေးအချက်အလက် -->
-            <fieldset>
-                <legend>၁။ ကိုယ်ရေးအချက်အလက် (Personal Information)</legend>
-                
-                <div class="form-group">
-                    <label for="fullname">အမည် (အင်္ဂလိပ်/မြန်မာ) <span class="required">*</span></label>
-                    <input type="text" id="fullname" name="fullname" placeholder="မောင်မောင် / Maung Maung" required>
-                </div>
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="dob">မွေးသက္ကရာဇ် <span class="required">*</span></label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nrc">မှတ်ပုံတင်အမှတ် <span class="required">*</span></label>
-                        <input type="text" id="nrc" name="nrc" placeholder="၁၂/ဗဟန(နိုင်)၁၂၃၄၅၆" required>
-                    </div>
-                </div>
+.form-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 750px;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">ဆက်သွယ်ရန် ဖုန်းနံပါတ် <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="09123456789" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="passport">ပတ်စပို့ (Passport) ရှိ/မရှိ <span class="required">*</span></label>
-                        <select id="passport" name="passport" required>
-                            <option value="">-- ရွေးချယ်ပါ --</option>
-                            <option value="yes">ရှိသည် (PJ/PS)</option>
-                            <option value="making">ပြုလုပ်ဆဲ</option>
-                            <option value="no">မရှိသေးပါ</option>
-                        </select>
-                    </div>
-                </div>
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e8f5e9;
+}
 
-                <div class="form-group">
-                    <label for="address">လက်ရှိ နေရပ်လိပ်စာ <span class="required">*</span></label>
-                    <textarea id="address" name="address" rows="3" placeholder="မြို့နယ်/တိုင်းဒေသကြီး" required></textarea>
-                </div>
-            </fieldset>
+.form-header h2 {
+    color: #2e7d32;
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
 
-            <!-- ၂။ လုပ်ငန်းအတွေ့အကြုံ -->
-            <fieldset>
-                <legend>၂။ လုပ်ငန်းအတွေ့အကြုံ (Work Experience)</legend>
+.form-header p {
+    color: #666;
+    font-size: 14px;
+}
 
-                <div class="form-group">
-                    <label for="category">လျှောက်ထားလိုသည့် လုပ်ငန်းအမျိုးအစား <span class="required">*</span></label>
-                    <select id="category" name="category" required>
-                        <option value="">-- ရွေးချယ်ပါ --</option>
-                        <option value="agriculture">စိုက်ပျိုးရေး (Agriculture)</option>
-                        <option value="livestock">မွေးမြူရေး (Livestock/Farming)</option>
-                        <option value="both">နှစ်မျိုးလုံး ရရှိသည်</option>
-                    </select>
-                </div>
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background-color: #fafafa;
+}
 
-                <div class="form-group">
-                    <label for="experience">လုပ်ငန်းအတွေ့အကြုံ အသေးစိတ်</label>
-                    <textarea id="experience" name="experience" rows="4" placeholder="ဥပမာ - ထိုင်းနိုင်ငံတွင် ဟင်းသီးဟင်းရွက် စိုက်ပျိုးရေး ၃ နှစ်၊ ဝက်မွေးမြူရေး ၁ နှစ် အတွေ့အကြုံရှိပါသည်..."></textarea>
-                </div>
+legend {
+    font-weight: 700;
+    color: #1b5e20;
+    padding: 0 10px;
+    font-size: 15px;
+}
 
-                <div class="form-group">
-                    <label for="machinery">စက်ကိရိယာ ကိုင်တွယ်နိုင်မှု (ရှိပါက မဲပေးပါ)</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="machinery[]" value="tractor"> ထရက်တာ (Tractor)</label>
-                        <label><input type="checkbox" name="machinery[]" value="harvester"> ရိတ်သိမ်းခြွေလှေ့စက်</label>
-                        <label><input type="checkbox" name="machinery[]" value="drone"> စိုက်ပျိုးရေး ဒရုန်း (Drone)</label>
-                        <label><input type="checkbox" name="machinery[]" value="driving"> ယာဉ်မောင်းလိုင်စင် ရှိသည်</label>
-                    </div>
-                </div>
-            </fieldset>
+.form-group {
+    margin-bottom: 18px;
+}
 
-            <!-- ၃။ ကျန်းမာရေးနှင့် ပြည်ပထွက်ခွာနိုင်မှု -->
-            <fieldset>
-                <legend>၃။ ကျန်းမာရေးနှင့် လိုအပ်ချက်များ</legend>
+.form-row {
+    display: flex;
+    gap: 15px;
+}
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="health">ကျန်းမာရေး အခြေအနေ <span class="required">*</span></label>
-                        <select id="health" name="health" required>
-                            <option value="good">ကောင်းမွန်ပါသည် (ရောဂါအခံမရှိပါ)</option>
-                            <option value="issue">ရောဂါအခံ ရှိပါသည်</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="language">ဘာသာစကား ကျွမ်းကျင်မှု</label>
-                        <input type="text" id="language" name="language" placeholder="ဥပမာ - အင်္ဂလိပ်စာ၊ ထိုင်းစာ၊ ကိုရီးယားစာ">
-                    </div>
-                </div>
-            </fieldset>
+.form-row .form-group {
+    flex: 1;
+}
 
-            <!-- ၄။ ဖိုင်တင်ရန် (Document Upload) -->
-            <fieldset>
-                <legend>၄။ ဖိုင်များ တင်ပြရန် (Upload Documents)</legend>
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
 
-                <div class="form-group">
-                    <label for="photo">ဓာတ်ပုံ Upload တင်ရန် (Passport Size Photo) <span class="required">*</span></label>
-                    <input type="file" id="photo" name="photo" accept="image/*" required>
-                </div>
+.required {
+    color: #e53935;
+}
 
-                <div class="form-group">
-                    <label for="nrc_copy">မှတ်ပုံတင် (ရှေ့/နောက်) သို့မဟုတ် Passport မိတ္တူ</label>
-                    <input type="file" id="nrc_copy" name="nrc_copy" accept="image/*,.pdf">
-                </div>
-            </fieldset>
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    outline: none;
+}
 
-            <button type="submit" class="submit-btn">လျှောက်လွှာ ပို့မည် (Submit Application)</button>
-        </form>
-    </div>
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
 
-</body>
-</html>
+textarea {
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background: #fff;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+input[type="file"] {
+    background: #fff;
+    padding: 8px;
+    border: 1px dashed #2e7d32;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #1b5e20;
+}
+
+.submit-btn:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-container {
+        padding: 20px;
+    }
+}
