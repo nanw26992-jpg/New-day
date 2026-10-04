@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ပြည်ပ စိုက်ပျိုးရေး/မွေးမြူရေး ဝန်ထမ်းလျှောက်လွှာ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h2>ပြည်ပ စိုက်ပျိုးရေး/မွေးမြူရေး ဝန်ထမ်းလျှောက်လွှာ</h2>
+            <p>အောက်ပါ အချက်အလက်များကို မှန်ကန်စွာ ဖြည့်သွင်းပေးပါရန်</p>
+        </div>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            
+            <!-- ၁။ ကိုယ်ရေးအချက်အလက် -->
+            <fieldset>
+                <legend>၁။ ကိုယ်ရေးအချက်အလက် (Personal Information)</legend>
+                
+                <div class="form-group">
+                    <label for="fullname">အမည် (အင်္ဂလိပ်/မြန်မာ) <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="မောင်မောင် / Maung Maung" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dob">မွေးသက္ကရာဇ် <span class="required">*</span></label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nrc">မှတ်ပုံတင်အမှတ် <span class="required">*</span></label>
+                        <input type="text" id="nrc" name="nrc" placeholder="၁၂/ဗဟန(နိုင်)၁၂၃၄၅၆" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">ဆက်သွယ်ရန် ဖုန်းနံပါတ် <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="09123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passport">ပတ်စပို့ (Passport) ရှိ/မရှိ <span class="required">*</span></label>
+                        <select id="passport" name="passport" required>
+                            <option value="">-- ရွေးချယ်ပါ --</option>
+                            <option value="yes">ရှိသည် (PJ/PS)</option>
+                            <option value="making">ပြုလုပ်ဆဲ</option>
+                            <option value="no">မရှိသေးပါ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">လက်ရှိ နေရပ်လိပ်စာ <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" placeholder="မြို့နယ်/တိုင်းဒေသကြီး" required></textarea>
+                </div>
+            </fieldset>
+
+            <!-- ၂။ လုပ်ငန်းအတွေ့အကြုံ -->
+            <fieldset>
+                <legend>၂။ လုပ်ငန်းအတွေ့အကြုံ (Work Experience)</legend>
+
+                <div class="form-group">
+                    <label for="category">လျှောက်ထားလိုသည့် လုပ်ငန်းအမျိုးအစား <span class="required">*</span></label>
+                    <select id="category" name="category" required>
+                        <option value="">-- ရွေးချယ်ပါ --</option>
+                        <option value="agriculture">စိုက်ပျိုးရေး (Agriculture)</option>
+                        <option value="livestock">မွေးမြူရေး (Livestock/Farming)</option>
+                        <option value="both">နှစ်မျိုးလုံး ရရှိသည်</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">လုပ်ငန်းအတွေ့အကြုံ အသေးစိတ်</label>
+                    <textarea id="experience" name="experience" rows="4" placeholder="ဥပမာ - ထိုင်းနိုင်ငံတွင် ဟင်းသီးဟင်းရွက် စိုက်ပျိုးရေး ၃ နှစ်၊ ဝက်မွေးမြူရေး ၁ နှစ် အတွေ့အကြုံရှိပါသည်..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="machinery">စက်ကိရိယာ ကိုင်တွယ်နိုင်မှု (ရှိပါက မဲပေးပါ)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="machinery[]" value="tractor"> ထရက်တာ (Tractor)</label>
+                        <label><input type="checkbox" name="machinery[]" value="harvester"> ရိတ်သိမ်းခြွေလှေ့စက်</label>
+                        <label><input type="checkbox" name="machinery[]" value="drone"> စိုက်ပျိုးရေး ဒရုန်း (Drone)</label>
+                        <label><input type="checkbox" name="machinery[]" value="driving"> ယာဉ်မောင်းလိုင်စင် ရှိသည်</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- ၃။ ကျန်းမာရေးနှင့် ပြည်ပထွက်ခွာနိုင်မှု -->
+            <fieldset>
+                <legend>၃။ ကျန်းမာရေးနှင့် လိုအပ်ချက်များ</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="health">ကျန်းမာရေး အခြေအနေ <span class="required">*</span></label>
+                        <select id="health" name="health" required>
+                            <option value="good">ကောင်းမွန်ပါသည် (ရောဂါအခံမရှိပါ)</option>
+                            <option value="issue">ရောဂါအခံ ရှိပါသည်</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="language">ဘာသာစကား ကျွမ်းကျင်မှု</label>
+                        <input type="text" id="language" name="language" placeholder="ဥပမာ - အင်္ဂလိပ်စာ၊ ထိုင်းစာ၊ ကိုရီးယားစာ">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- ၄။ ဖိုင်တင်ရန် (Document Upload) -->
+            <fieldset>
+                <legend>၄။ ဖိုင်များ တင်ပြရန် (Upload Documents)</legend>
+
+                <div class="form-group">
+                    <label for="photo">ဓာတ်ပုံ Upload တင်ရန် (Passport Size Photo) <span class="required">*</span></label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nrc_copy">မှတ်ပုံတင် (ရှေ့/နောက်) သို့မဟုတ် Passport မိတ္တူ</label>
+                    <input type="file" id="nrc_copy" name="nrc_copy" accept="image/*,.pdf">
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">လျှောက်လွှာ ပို့မည် (Submit Application)</button>
+        </form>
+    </div>
+
+</body>
+</html>
